@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox" class="task__done">
+            <img src="assets/urgent.svg" class="task__urgent task__urgent--hidden" alt="urgent">
+            <p class="task__title">Задача 1</p>
+            <img src="assets/pencil.svg" class="task__edit" alt="edit">
+            <img src="assets/trashbin.svg" class="task__delete" alt="delete">
+        </div>
+    </template>
+
+    <div class="container">
+        <div class="task-list">
+            <div class="task-list__header">
+                <p class="task-list__title">Список задач</p>
+                <div class="task-list__new"><div class="task-list__new-icon"></div>Добавить</div>
+            </div>
+            <div class="task-list__tasks-container">
+            </div>
+        </div>
+        <div class="task-edit task-edit--hidden">
+            <p class="task-edit__header">Карточка задачи</p>
+            <p class="task-edit__hint">Задача</p>
+            <input type="text" class="task-edit__title" value="Задача 1">
+            <label class="task-edit__urgent-select"><input type="checkbox" class="task-edit__urgent">Высокий приоритет<img class="task-edit__urgent-icon" src="assets/urgent.svg" alt="urgent"></label>
+            <button class="task-edit__accept">Сохранить</button>
+            <button class="task-edit__decline">Отменить</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+html {
+    background-image: url("./assets/background.png");
+}
+
+body {
+    margin: 0;
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    color: #707070;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 71.25rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.task-list {
+    background-color: #FFFFFF;
+    height: 100vh;
+    width: 35.625rem;
+    z-index: 1;
+    box-shadow: 0 0 6px #00000029;
+    overflow: hidden;
+}
+
+.task-edit {
+    background-color: #FFFFFF;
+    margin-top: 4.4375rem;
+    height: 13.25rem;
+    width: 35.625rem;
+    box-shadow: 0 0 6px #00000029;
+    border-radius: 0 14px 14px 0;
+    padding: 1.75rem 0.9375rem 1.75rem 1.875rem;
+}
+
+.task-edit--hidden {
+    display: none;
+}
+
+.task-list__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0.9375rem;
+}
+
+.task-list__title {
+    font: normal normal bold 1.25rem/1.5rem Roboto;
+    margin-top: 2rem;
+}
+
+.task-list__new {
+    cursor: pointer;
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    display: flex;
+    gap: 0.3871875rem;
+    margin-top: 2.34375rem;
+    padding: 0;
+    height: fit-content;
+}
+
+.task-list__new-icon {
+    display: inline-block;
+    background: transparent url("./assets/add.svg") 0 0 no-repeat padding-box;
+    width: 1.0625rem;
+    height: 1.0625rem;
+}
+
+.task-list__tasks-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+.task {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.task:nth-child(odd) {
+    background-color: #0606060A;
+}
+
+.task__done, .task-edit__urgent {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin: 0.625rem 0.9375rem;
+    appearance: unset;
+    background-image: url("assets/checkbox-empty.svg");
+    cursor: pointer;
+}
+
+.task__done:checked, .task-edit__urgent:checked {
+    background-image: url("assets/checkbox.svg");
+}
+
+.task__urgent {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0.625rem 0.9375rem 0.625rem 0;
+}
+
+.task__urgent--hidden {
+    display: none;
+}
+
+.task__title {
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    margin: 0.75rem 0 0.6875rem 0;
+    flex-grow: 10;
+}
+
+.task__title--done {
+    text-decoration: line-through;
+    color: #707070;
+    opacity: 0.5;
+}
+
+.task__edit, .task__delete {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0.625rem 0.9375rem 0.625rem 0;
+    cursor: pointer;
+}
+
+.task-edit__header {
+    font: normal normal normal 1.125rem/1.375rem Roboto;
+    color: #000000;
+    margin: 0 0 0.4375rem 0;
+}
+
+.task-edit__hint {
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    margin: 0 0 0.3125rem 0;
+}
+
+.task-edit__title {
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    color: #202020;
+    width: 100%;
+}
+
+.task-edit__urgent {
+    margin: 0 0.5625rem 0 0;
+}
+
+.task-edit__urgent-select {
+    width: 100%;
+    display: flex;
+    margin: 0.9375rem 0 0 0;
+    cursor: pointer;
+}
+
+.task-edit__urgent-icon {
+    margin: 0 0 0 0.4375rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.task-edit__accept {
+    appearance: unset;
+    border: unset;
+    color: #FFFFFF;
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    background: #3F88E8 0 0 no-repeat padding-box;
+    border-radius: 32px;
+    width: 7.875rem;
+    height: 2rem;
+    cursor: pointer;
+    transition: 0.3s background-color;
+    margin: 1.0625rem 0.9375rem 0 0;
+}
+
+.task-edit__accept:hover {
+    background: #3877cb 0 0 no-repeat padding-box;
+}
+
+.task-edit__accept:active {
+    background: #2b5996 0 0 no-repeat padding-box;
+}
+
+.task-edit__decline {
+    appearance: unset;
+    border: 1px solid #707070;
+    font: normal normal normal 0.875rem/1.0625rem Roboto;
+    color: #707070;
+    border-radius: 32px;
+    width: 7.875rem;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    transition: 0.3s background-color;
+}
+
+.task-edit__decline:hover {
+    background-color: #eeeeee;
+}
+
+.task-edit__decline:active {
+    background-color: #dedede;
+}
