@@ -56,6 +56,11 @@ class Task {
         this.urgent = urgent;
         this.title = title;
         this.index = tasks.push(this) - 1;
+
+        editing = this;
+        editContainer.querySelector(".task-edit__title").value = this.title;
+        editContainer.querySelector(".task-edit__urgent").checked = this.urgent;
+        editContainer.classList.remove("task-edit--hidden");
     }
 
     setUrgent(urgent) {
